@@ -1,0 +1,7 @@
+fastapi==0.142.2
+uvicorn==0.54.0
+rapidfuzz==3.14.6
+httpx==0.28.1
+python-multipart==0.0.32
+psutil==7.2.2
+pytest==9.1.1
