@@ -40,15 +40,21 @@ async function waitFor(expr, ms = 120000) {
   }
   throw new Error("timeout waiting for " + expr);
 }
-async function shot(name, full = true) {
-  let clip;
-  await evaluate(`document.querySelector(".tabs").style.position = ${full ? '"static"' : '""'}; document.querySelector("#toast").hidden = true; true`);
+// Full shots: grow the viewport to the page height so the fixed bottom nav lands at the
+// bottom of the image, like a long phone screenshot.
+async function shot(name, full = true, scrollSel = null) {
+  await evaluate(`document.querySelector("#toast").hidden = true; ${scrollSel
+    ? `(() => { const el = document.querySelector(${JSON.stringify(scrollSel)}); window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 120); })();`
+    : "window.scrollTo(0, 0);"} true`);
+  await sleep(450); // let entrance transitions settle
   if (full) {
     const hgt = await evaluate("Math.ceil(document.documentElement.scrollHeight)");
-    clip = { x: 0, y: 0, width: 390, height: Math.min(hgt, 2400), scale: 1 };
+    await send("Emulation.setDeviceMetricsOverride", { width: 390, height: Math.min(Math.max(hgt, 844), 2600), deviceScaleFactor: 2, mobile: true });
+    await sleep(300);
   }
-  const r = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: full, clip });
+  const r = await send("Page.captureScreenshot", { format: "png" });
   writeFileSync(join(OUT, name + ".png"), Buffer.from(r.data, "base64"));
+  if (full) await send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
   console.log("saved", name);
 }
 const click = (sel) => evaluate(`(() => { const el = document.querySelector(${JSON.stringify(sel)}); if (!el) throw new Error("no ${sel}"); el.click(); return true; })()`);
@@ -76,14 +82,14 @@ try {
   await evaluate(`document.querySelector("#line").value = ${JSON.stringify(LINE)}; true`);
   await click("#read-btn");
   await waitFor(`document.querySelectorAll("#cards .card").length > 0`);
-  console.log("cards:", JSON.stringify(await evaluate(`[...document.querySelectorAll("#cards .card")].map(c => c.className + " | " + c.querySelector(".summary").textContent + " | " + [...c.querySelectorAll(".reasons li")].map(l => l.textContent).join(";"))`)));
+  console.log("cards:", JSON.stringify(await evaluate(`[...document.querySelectorAll("#cards .card")].map(c => c.className + " | " + c.querySelector(".card-top").textContent + " | " + [...c.querySelectorAll(".question span")].map(l => l.textContent).join(";"))`)));
   console.log("status:", await evaluate(`document.querySelector("#parse-status").textContent`));
   await shot("likho");
 
   await click("#save-green");
   await waitFor(`!document.querySelector("#toast").hidden`);
   console.log("toast:", await evaluate(`document.querySelector("#toast").textContent`));
-  await waitFor(`document.querySelectorAll("#today-list li.student-item").length > 0`);
+  await waitFor(`document.querySelectorAll("#today-list li:not(.empty)").length > 0`);
   console.log("tray count:", await evaluate(`document.querySelector("#tray-count").textContent`));
 
   // Check karo: fix the Neha card by picking the first candidate
@@ -95,12 +101,12 @@ try {
     const sel = card.querySelector(".editor select:nth-of-type(1)") || card.querySelector("select");
     const stu = card.querySelectorAll("select")[0];
     stu.selectedIndex = 1; stu.dispatchEvent(new Event("change"));
-    const btn = card.querySelector(".actions .primary");
+    const btn = card.querySelector(".card-actions .primary");
     return !btn.disabled;
   })()`);
   console.log("tray card fixable:", fixed);
   if (fixed) {
-    await click("#tray .card .actions .primary");
+    await click("#tray .card .card-actions .primary");
     await sleep(800);
     console.log("tray after accept:", await evaluate(`document.querySelectorAll("#tray .card").length`));
   }
@@ -109,12 +115,13 @@ try {
   await click("#tab-baaki");
   await waitFor(`document.querySelectorAll("#dues-list li").length > 0`);
   console.log("dues total:", await evaluate(`document.querySelector("#dues-total").textContent`));
-  await evaluate(`([...document.querySelectorAll("#dues-list button.name")].find(b => b.textContent === (process_name)) || document.querySelector("#dues-list button.name")).click(); true`.replace("process_name", JSON.stringify(process.env.TR_SHOT_STUDENT || "Riya")));
+  await shot("baaki");
+  await evaluate(`([...document.querySelectorAll("#dues-list .row-btn")].find(b => b.dataset.name === (process_name)) || document.querySelector("#dues-list .row-btn")).click(); true`.replace("process_name", JSON.stringify(process.env.TR_SHOT_STUDENT || "Riya")));
   await waitFor(`!document.querySelector("#student-detail").hidden`);
   await evaluate(`[...document.querySelectorAll("#student-detail button")].find(b => b.classList.contains("primary")).click(); true`);
-  await waitFor(`document.querySelector("#rem-text")?.value.length > 0`);
-  console.log("reminder:", await evaluate(`document.querySelector("#rem-text").value`));
-  await shot("baaki");
+  await waitFor(`document.querySelector("#rem-text")?.textContent.length > 0`);
+  console.log("reminder:", await evaluate(`document.querySelector("#rem-text").textContent`));
+  await shot("reminder", false, "#student-detail .ledger");
 
   // Bachche
   await click("#tab-bachche");
@@ -124,12 +131,12 @@ try {
   // Poocho
   await click("#tab-poocho");
   await evaluate(`document.querySelector("#ask-examples button").click(); true`);
-  await waitFor(`document.querySelector("#answer p")`);
+  await waitFor(`document.querySelector("#answer .a-bubble:last-child p:not(.row-sub)")`);
   console.log("answer:", await evaluate(`document.querySelector("#answer").textContent`));
   await shot("poocho");
 
   // English toggle
-  await click("#lang-toggle");
+  await click("#lang-en");
   await click("#tab-likho");
   await shot("likho-en", false);
   console.log("OK");

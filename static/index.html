@@ -2,110 +2,117 @@
 <html lang="hi-Latn">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
   <title>Tuition Register</title>
   <link rel="stylesheet" href="/static/styles.css">
   <script src="/static/app.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
   <header class="top">
     <div class="brand">
-      <span class="logo" aria-hidden="true">📒</span>
-      <div><h1>Tuition Register</h1><p class="tagline" data-i18n="tagline"></p></div>
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="5" y="3" width="22" height="26" rx="4" fill="currentColor"/>
+        <path d="M11 3v26" stroke="#fff" stroke-width="2" opacity=".55"/>
+        <path d="M15 11h8M15 16h8M15 21h5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>Tuition Register</h1>
+        <p id="status-chip" class="status" role="status"><span class="dot" aria-hidden="true"></span><span class="status-text">…</span></p>
+      </div>
     </div>
-    <div class="top-right">
-      <span id="status-chip" class="chip" role="status">…</span>
-      <button id="lang-toggle" type="button" class="ghost" aria-pressed="false">English</button>
+    <div class="seg" role="group" aria-label="Language">
+      <button id="lang-hi" type="button" aria-pressed="true">Hinglish</button>
+      <button id="lang-en" type="button" aria-pressed="false">English</button>
     </div>
   </header>
-
-  <nav class="tabs" role="tablist" aria-label="Sections">
-    <button role="tab" id="tab-likho" aria-controls="panel-likho" aria-selected="true" data-tab="likho">
-      <span data-i18n="tab_likho"></span><small data-i18n2="tab_likho"></small></button>
-    <button role="tab" id="tab-check" aria-controls="panel-check" aria-selected="false" tabindex="-1" data-tab="check">
-      <span data-i18n="tab_check"></span><small data-i18n2="tab_check"></small>
-      <span id="tray-count" class="count" hidden></span></button>
-    <button role="tab" id="tab-baaki" aria-controls="panel-baaki" aria-selected="false" tabindex="-1" data-tab="baaki">
-      <span data-i18n="tab_baaki"></span><small data-i18n2="tab_baaki"></small></button>
-    <button role="tab" id="tab-bachche" aria-controls="panel-bachche" aria-selected="false" tabindex="-1" data-tab="bachche">
-      <span data-i18n="tab_bachche"></span><small data-i18n2="tab_bachche"></small></button>
-    <button role="tab" id="tab-poocho" aria-controls="panel-poocho" aria-selected="false" tabindex="-1" data-tab="poocho">
-      <span data-i18n="tab_poocho"></span><small data-i18n2="tab_poocho"></small></button>
-  </nav>
 
   <main id="main">
     <!-- PIN (only when TR_PIN is set on the server) -->
     <section id="pin-box" class="panel" hidden>
-      <form id="pin-form">
+      <form id="pin-form" class="sheet">
         <label for="pin-input" data-i18n="pin_label"></label>
         <input id="pin-input" type="password" inputmode="numeric" autocomplete="off" required>
-        <button type="submit" class="primary" data-i18n="pin_go"></button>
+        <button type="submit" class="btn primary" data-i18n="pin_go"></button>
       </form>
     </section>
 
     <!-- 1. Likho / Write -->
     <section id="panel-likho" class="panel" role="tabpanel" aria-labelledby="tab-likho">
-      <form id="write-form">
-        <label for="line" data-i18n="write_label"></label>
+      <form id="write-form" class="sheet compose">
+        <label for="line" class="compose-label" data-i18n="write_label"></label>
         <textarea id="line" rows="3" maxlength="1000" required
           placeholder="riya nahi aayi, aman ne 1500 diye oct ke, baaki 500 next week"></textarea>
-        <div class="row">
-          <div>
+        <div class="compose-foot">
+          <div class="date-field">
             <label for="entry-date" data-i18n="date_label"></label>
             <input id="entry-date" type="date" required>
           </div>
-          <button id="read-btn" type="submit" class="primary big" data-i18n="read_btn"></button>
+          <button id="read-btn" type="submit" class="btn primary big">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h13M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="read_btn"></span>
+          </button>
         </div>
       </form>
-      <div id="parse-status" class="muted" role="status" aria-live="polite"></div>
-      <div id="cards" aria-live="polite"></div>
-      <div id="cards-actions" class="row" hidden>
-        <button id="save-green" type="button" class="primary big" data-i18n="save_green"></button>
+
+      <div id="parse-status" class="parse-status" role="status" aria-live="polite"></div>
+      <div id="heard" class="heard" hidden></div>
+      <div id="cards" class="cards" aria-live="polite"></div>
+      <div id="cards-actions" class="savebar" hidden>
+        <button id="save-green" type="button" class="btn primary big wide"></button>
+        <p id="save-note" class="save-note"></p>
       </div>
-      <h2 data-i18n="today_saved"></h2>
-      <ul id="today-list" class="plain"></ul>
+
+      <section class="block" aria-labelledby="today-h">
+        <h2 id="today-h" class="block-title" data-i18n="today_saved"></h2>
+        <ul id="today-list" class="list"></ul>
+      </section>
     </section>
 
     <!-- 2. Check karo / Confirm tray -->
     <section id="panel-check" class="panel" role="tabpanel" aria-labelledby="tab-check" hidden>
-      <p class="muted" data-i18n="tray_help"></p>
-      <div id="tray" aria-live="polite"></div>
+      <h2 class="panel-title" data-i18n="tab_check"></h2>
+      <p class="lede" data-i18n="tray_help"></p>
+      <div id="tray" class="cards" aria-live="polite"></div>
     </section>
 
     <!-- 3. Baaki / Dues -->
     <section id="panel-baaki" class="panel" role="tabpanel" aria-labelledby="tab-baaki" hidden>
-      <div class="row">
-        <div>
-          <label for="dues-month" data-i18n="month_label"></label>
+      <div class="panel-head">
+        <h2 class="panel-title" data-i18n="tab_baaki"></h2>
+        <div class="month-field">
+          <label for="dues-month" class="sr-only" data-i18n="month_label"></label>
           <input id="dues-month" type="month">
         </div>
       </div>
-      <div id="dues-total" class="stats" aria-live="polite"></div>
-      <ul id="dues-list" class="plain"></ul>
+      <div id="dues-total" class="summary" aria-live="polite"></div>
+      <div id="dues-list"></div>
       <div id="student-detail" hidden></div>
     </section>
 
     <!-- 4. Bachche / Students -->
     <section id="panel-bachche" class="panel" role="tabpanel" aria-labelledby="tab-bachche" hidden>
-      <ul id="students-list" class="plain"></ul>
-      <details>
+      <h2 class="panel-title" data-i18n="tab_bachche"></h2>
+      <ul id="students-list" class="list"></ul>
+      <details class="sheet fold">
         <summary data-i18n="add_student"></summary>
-        <form id="student-form" class="grid">
-          <label for="s-name" data-i18n="s_name"></label><input id="s-name" required maxlength="80">
-          <label for="s-aliases" data-i18n="s_aliases"></label><input id="s-aliases" maxlength="200" placeholder="Riyu, Chhotu">
-          <label for="s-batch" data-i18n="s_batch"></label><input id="s-batch" maxlength="20">
-          <label for="s-fee" data-i18n="s_fee"></label><input id="s-fee" type="number" min="0" max="100000" required>
-          <label for="s-start" data-i18n="s_start"></label><input id="s-start" type="month" required>
-          <button type="submit" class="primary" data-i18n="save"></button>
+        <form id="student-form" class="form-grid">
+          <div class="span2"><label for="s-name" data-i18n="s_name"></label><input id="s-name" required maxlength="80"></div>
+          <div class="span2"><label for="s-aliases" data-i18n="s_aliases"></label><input id="s-aliases" maxlength="200" placeholder="Riyu, Chhotu"></div>
+          <div><label for="s-batch" data-i18n="s_batch"></label><input id="s-batch" maxlength="20" placeholder="8th"></div>
+          <div><label for="s-fee" data-i18n="s_fee"></label><input id="s-fee" type="number" min="0" max="100000" inputmode="numeric" required></div>
+          <div class="span2"><label for="s-start" data-i18n="s_start"></label><input id="s-start" type="month" required></div>
+          <button type="submit" class="btn primary span2" data-i18n="save"></button>
         </form>
       </details>
-      <details>
+      <details class="sheet fold">
         <summary data-i18n="import_csv"></summary>
         <form id="import-form">
           <label for="csv-file" data-i18n="csv_label"></label>
           <input id="csv-file" type="file" accept=".csv,text/csv" required>
-          <button type="submit" class="primary" data-i18n="import_btn"></button>
+          <button type="submit" class="btn primary" data-i18n="import_btn"></button>
         </form>
       </details>
       <p id="students-msg" role="status" aria-live="polite"></p>
@@ -113,17 +120,37 @@
 
     <!-- 5. Poocho / Ask -->
     <section id="panel-poocho" class="panel" role="tabpanel" aria-labelledby="tab-poocho" hidden>
-      <form id="ask-form">
-        <label for="question" data-i18n="ask_label"></label>
+      <h2 class="panel-title" data-i18n="tab_poocho"></h2>
+      <div id="answer" class="thread" role="status" aria-live="polite"></div>
+      <div id="ask-examples" class="chips" role="group"></div>
+      <form id="ask-form" class="askbar">
+        <label for="question" class="sr-only" data-i18n="ask_label"></label>
         <input id="question" maxlength="300" required placeholder="kis kis ka october baaki hai?">
-        <button type="submit" class="primary big" data-i18n="ask_btn"></button>
+        <button type="submit" class="btn primary" data-i18n="ask_btn"></button>
       </form>
-      <div id="ask-examples" class="chips"></div>
-      <div id="answer" class="answer" role="status" aria-live="polite"></div>
     </section>
+
+    <p class="foot" data-i18n="footer"></p>
   </main>
 
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-likho" aria-controls="panel-likho" aria-selected="true" data-tab="likho">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span data-i18n="tab_likho"></span></button>
+    <button role="tab" id="tab-check" aria-controls="panel-check" aria-selected="false" tabindex="-1" data-tab="check">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 16H3L12 3zM12 10v4M12 17v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span data-i18n="tab_check"></span><b id="tray-count" class="count" hidden></b></button>
+    <button role="tab" id="tab-baaki" aria-controls="panel-baaki" aria-selected="false" tabindex="-1" data-tab="baaki">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10M7 8h10M9 4c4 0 6 2 6 4.5S13 13 9 13l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="tab_baaki"></span></button>
+    <button role="tab" id="tab-bachche" aria-controls="panel-bachche" aria-selected="false" tabindex="-1" data-tab="bachche">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c.5-3.5 3-5.5 6-5.5s5.5 2 6 5.5M16 4.5a3.5 3.5 0 010 7M18 14.5c2 .8 3 2.8 3.3 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span data-i18n="tab_bachche"></span></button>
+    <button role="tab" id="tab-poocho" aria-controls="panel-poocho" aria-selected="false" tabindex="-1" data-tab="poocho">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span data-i18n="tab_poocho"></span></button>
+  </nav>
+
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-  <footer class="muted foot" data-i18n="footer"></footer>
 </body>
 </html>

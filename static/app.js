@@ -3,24 +3,25 @@
 
 // ---------- strings: [hinglish, english] ----------
 const T = {
-  tagline: ["Fees aur haazri, bina hisaab lagaye", "Fees and attendance, no sums by hand"],
-  stat_pending: ["Baaki", "Pending"],
-  stat_collected: ["Mil gaye", "Collected"],
-  stat_owing: ["Bachche baaki", "Students owing"],
   tab_likho: ["Likho", "Write"],
   tab_check: ["Check karo", "Confirm"],
   tab_baaki: ["Baaki", "Dues"],
   tab_bachche: ["Bachche", "Students"],
   tab_poocho: ["Poocho", "Ask"],
   write_label: ["Register mein jaise likhti ho, waise likho", "Write it the way you write in your register"],
-  date_label: ["Tarikh", "Date"],
+  date_label: ["Kis din ka", "For the day"],
   read_btn: ["Samjho", "Read it"],
   reading: ["Padh raha hai…", "Reading…"],
-  save_green: ["Sab hara save karo", "Save all green"],
+  heard: ["Aapne likha", "You wrote"],
+  checked_n: ["pakka", "checked"],
+  look_n: ["dekhna hai", "to look at"],
+  save_n_green: ["pakki entries save karo", "checked entries: save"],
+  save_note: ["dekhne wali entries “Check karo” mein chali jayengi", "to look at will go to Confirm"],
   today_saved: ["Is din save hua", "Saved for this day"],
-  nothing_saved: ["Abhi kuch save nahi hua.", "Nothing saved yet."],
-  tray_help: ["Yeh entries pakki nahi thi. Dekh ke sahi karo, phir save karo.", "These weren't certain. Check, fix if needed, then save."],
-  tray_empty: ["Kuch check karna baaki nahi hai.", "Nothing to check."],
+  nothing_saved: ["Abhi kuch save nahi hua. Upar ek line likho.", "Nothing saved yet. Write a line above."],
+  tray_help: ["Yeh entries pakki nahi thi. Ek baar dekh lo, phir save karo.", "These weren't certain. Take a look, fix if needed, then save."],
+  tray_empty: ["Sab saaf. Kuch check karna baaki nahi hai.", "All clear. Nothing to check."],
+  from_line: ["Line", "Line"],
   month_label: ["Mahina", "Month"],
   add_student: ["Naya bachcha jodo", "Add a student"],
   s_name: ["Naam", "Name"],
@@ -28,22 +29,23 @@ const T = {
   s_batch: ["Batch", "Batch"],
   s_fee: ["Mahine ki fees (₹)", "Monthly fee (₹)"],
   s_start: ["Kab se", "Start month"],
-  save: ["Save karo", "Save"],
+  save: ["Bachcha save karo", "Save student"],
   import_csv: ["CSV se list laao", "Import from CSV"],
   csv_label: ["CSV file (name,aliases,batch,monthly_fee,start_month)", "CSV file (name,aliases,batch,monthly_fee,start_month)"],
-  import_btn: ["Import karo", "Import"],
+  import_btn: ["List import karo", "Import list"],
   ask_label: ["Kuch bhi poocho", "Ask a question"],
   ask_btn: ["Poocho", "Ask"],
+  ask_hint: ["Yeh 4 tarah ke sawaal samajhta hai. Jawab register se, hisaab code se.", "It understands 4 kinds of questions. Answers come from the register, sums from code."],
   pin_label: ["PIN daalo", "Enter PIN"],
   pin_go: ["Kholo", "Open"],
   footer: ["Sab kuch isi computer par. Internet ki zaroorat nahi.", "Everything stays on this computer. No internet needed."],
   accept: ["Sahi hai, save karo", "Looks right, save"],
-  discard: ["Hatao", "Discard"],
+  discard: ["Hatao", "Remove"],
   edit: ["Badlo", "Edit"],
   undo: ["Undo", "Undo"],
-  saved_n: ["save hua", "saved"],
-  moved_n: ["check karne ke liye bheja", "sent to Confirm"],
-  no_events: ["Is line mein koi entry nahi mili.", "No entries found in this line."],
+  saved_n: ["save hui", "saved"],
+  moved_n: ["check karne ke liye bheji", "sent to Confirm"],
+  no_events: ["Is line mein koi entry nahi mili. Kuch save nahi hoga.", "No entries in this line. Nothing will be saved."],
   student: ["Bachcha", "Student"],
   pick: ["— chuno —", "— pick —"],
   type: ["Kya hua", "What"],
@@ -52,38 +54,48 @@ const T = {
   for_month: ["Kis mahine ki", "For month"],
   on_date: ["Tarikh", "Date"],
   note: ["Note", "Note"],
-  read_as: ["Padha:", "Read as:"],
   due: ["Fees", "Due"],
   paid: ["Mili", "Paid"],
-  balance: ["Baaki", "Balance"],
+  balance: ["Baaki", "Owes"],
   outstanding: ["Kul baaki", "Total owed"],
   advance: ["Advance", "Advance"],
-  total_for: ["Is mahine kul baaki", "Total pending this month"],
-  all_clear: ["Sab clear", "All clear"],
+  pending_in: ["baaki", "pending"],
+  of_students: ["bachchon ki fees baaki", "students still owe"],
+  collected: ["mil gaye", "collected"],
+  of_total: ["kul", "of"],
+  owes_group: ["Fees baaki", "Still owe"],
+  clear_group: ["Fees aa gayi", "Paid up"],
+  all_clear: ["Clear", "Paid"],
+  everyone_paid: ["Is mahine sabki fees aa gayi.", "Everyone has paid this month."],
   promised: ["Vaada", "Promised"],
   overdue: ["tarikh nikal gayi", "overdue"],
-  by: ["tak", "by"],
-  reminder: ["Yaad dilao (message)", "Reminder message"],
+  reminder: ["Yaad dilane ka message", "Reminder message"],
   lang: ["Bhasha", "Language"],
   tone: ["Andaaz", "Tone"],
-  preview: ["Message banao", "Make message"],
-  copy: ["Copy karo", "Copy"],
-  copied: ["Copy ho gaya", "Copied"],
-  wa_link: ["WhatsApp mein kholo (internet chahiye)", "Open in WhatsApp (needs internet)"],
-  close: ["Band karo", "Close"],
+  preview: ["Message banao", "Write message"],
+  copy: ["Copy karo", "Copy message"],
+  copied: ["Copy ho gaya. WhatsApp mein paste kar do.", "Copied. Paste it into WhatsApp."],
+  wa_link: ["WhatsApp mein kholo", "Open in WhatsApp"],
+  wa_note: ["(internet chahiye)", "(needs internet)"],
+  src_model: ["Shabd Gemma ne likhe, rakam code ne bhari.", "Wording by Gemma, amount filled in by code."],
+  src_cached: ["Pehle bana message, rakam code ne bhari.", "Saved wording, amount filled in by code."],
+  src_fallback: ["Taiyaar message, rakam code ne bhari.", "Built-in wording, amount filled in by code."],
   month_col: ["Mahina", "Month"],
   absent_col: ["Nahi aaye", "Absent"],
-  history: ["Entries", "Entries"],
   left: ["chhod diya", "left"],
+  per_month: ["/mahina", "/month"],
+  since: ["se", "since"],
   pick_student: ["Kaun sa bachcha?", "Which student?"],
   model_off: ["Model band hai: Ollama chalao", "Model off: start Ollama"],
+  local_ok: ["isi computer par · offline OK", "on this computer · offline OK"],
   error: ["Gadbad hui", "Something went wrong"],
-  examples: ["Jaise:", "Try:"],
+  try_line: ["Jaise:", "Try:"],
 };
 const TYPE_LABEL = {
   attendance: ["Haazri", "Attendance"], payment: ["Fees mili", "Payment"], promise: ["Baad mein denge", "Promise"],
   fee_set: ["Nayi fees", "Fee change"], note: ["Note", "Note"], missing: ["Chhoot gaya?", "Missed?"],
 };
+const TYPE_IC = { attendance: "H", payment: "₹", promise: "⏳", fee_set: "₹", note: "✎", missing: "?" };
 const STATUS_LABEL = { present: ["aaye", "present"], absent: ["nahi aaye", "absent"], late: ["late aaye", "late"] };
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MODEL_NAMES = { "gemma4:e2b": "Gemma 4 E2B", "gemma3:1b": "Gemma 3 1B", "gemma3:4b": "Gemma 3 4B" };
@@ -93,13 +105,12 @@ const S = {
   pin: sessionStorage.getItem("tr_pin") || "",
   today: new Date().toISOString().slice(0, 10),
   students: [],
-  parsed: null, // {line, entry_date, model, cards: []}
+  parsed: null, // {line, entry_date, model, seconds, cards: []}
   tray: JSON.parse(localStorage.getItem("tr_tray") || "[]"),
 };
 
 const $ = (sel) => document.querySelector(sel);
 const L = (k) => (T[k] ? T[k][S.lang === "hi" ? 0 : 1] : k);
-const L2 = (k) => (T[k] ? T[k][S.lang === "hi" ? 1 : 0] : "");
 const pick = (pair) => pair[S.lang === "hi" ? 0 : 1];
 
 function h(tag, attrs = {}, ...kids) {
@@ -125,13 +136,32 @@ const monthName = (ym, year = true) => {
   const [y, m] = ym.split("-");
   return MONTHS[Number(m) - 1] + (year ? " " + y : "");
 };
-const byDate = (iso) => (S.lang === "hi" ? `${dayLabel(iso)} tak` : `by ${dayLabel(iso)}`);
-const monthsLabel = (fm) => (fm || "").split(",").filter(Boolean).map((m) => monthName(m, false)).join(" + ");
 const dayLabel = (iso) => {
   if (!iso) return "";
-  const [y, m, d] = iso.split("-");
+  const [, m, d] = iso.split("-");
   return `${Number(d)} ${MONTHS[Number(m) - 1].slice(0, 3)}`;
 };
+const byDate = (iso) => (S.lang === "hi" ? `${dayLabel(iso)} tak` : `by ${dayLabel(iso)}`);
+const monthsLabel = (fm) => (fm || "").split(",").filter(Boolean).map((m) => monthName(m, false)).join(" + ");
+const batchClass = (b) => (b ? "b" + String(b).replace(/\D/g, "") : "");
+const initials = (name) => name.split(/\s+/).map((p) => p[0]).slice(0, 2).join("").toUpperCase();
+
+function svgIcon(path) {
+  const ns = "http://www.w3.org/2000/svg";
+  const s = document.createElementNS(ns, "svg");
+  s.setAttribute("viewBox", "0 0 24 24");
+  s.setAttribute("aria-hidden", "true");
+  const p = document.createElementNS(ns, "path");
+  p.setAttribute("d", path);
+  p.setAttribute("fill", "none");
+  p.setAttribute("stroke", "currentColor");
+  p.setAttribute("stroke-width", "2");
+  p.setAttribute("stroke-linecap", "round");
+  p.setAttribute("stroke-linejoin", "round");
+  s.append(p);
+  return s;
+}
+const CHEVRON = "M9 6l6 6-6 6";
 
 // ---------- API ----------
 async function api(path, opts = {}) {
@@ -155,11 +185,20 @@ async function api(path, opts = {}) {
 function applyLang() {
   document.documentElement.lang = S.lang === "hi" ? "hi-Latn" : "en";
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = L(el.dataset.i18n)));
-  document.querySelectorAll("[data-i18n2]").forEach((el) => (el.textContent = L2(el.dataset.i18n2)));
-  const btn = $("#lang-toggle");
-  btn.textContent = S.lang === "hi" ? "English" : "Hinglish";
-  btn.setAttribute("aria-pressed", S.lang === "en" ? "true" : "false");
-  btn.setAttribute("aria-label", S.lang === "hi" ? "Switch to English" : "Switch to Hinglish");
+  $("#lang-hi").setAttribute("aria-pressed", S.lang === "hi" ? "true" : "false");
+  $("#lang-en").setAttribute("aria-pressed", S.lang === "en" ? "true" : "false");
+}
+
+function setLang(lang) {
+  if (S.lang === lang) return;
+  S.lang = lang;
+  localStorage.setItem("tr_lang", lang);
+  applyLang();
+  renderParsed();
+  renderAskHint();
+  const sel = document.querySelector('[role="tab"][aria-selected="true"]');
+  if (sel) showTab(sel.dataset.tab);
+  loadToday();
 }
 
 function showTab(name, focus = false) {
@@ -173,6 +212,7 @@ function showTab(name, focus = false) {
   if (name === "check") renderTray();
   if (name === "baaki") loadDues();
   if (name === "bachche") loadStudents();
+  window.scrollTo(0, 0);
 }
 
 function setupTabs() {
@@ -204,21 +244,24 @@ function toast(msg, undoFn) {
 // ---------- health / PIN ----------
 async function loadHealth() {
   const chip = $("#status-chip");
+  const text = chip.querySelector(".status-text");
   try {
     const hl = await api("/api/health");
     S.today = hl.today || S.today;
+    S.model = hl.model;
     const name = MODEL_NAMES[hl.model] || hl.model;
     if (hl.ollama && hl.model_available) {
-      chip.textContent = `${name} · local · offline OK`;
-      chip.className = "chip";
+      text.textContent = `${name} · offline OK`;
+      chip.title = `${name} running locally in Ollama`;
+      chip.className = "status";
     } else {
-      chip.textContent = `${name} · ${L("model_off")}`;
-      chip.className = "chip bad";
+      text.textContent = `${name} · ${L("model_off")}`;
+      chip.className = "status bad";
     }
     if (hl.pin_required && !S.pin) showPin();
   } catch (e) {
-    chip.textContent = L("error");
-    chip.className = "chip bad";
+    text.textContent = L("error");
+    chip.className = "status bad";
   }
 }
 
@@ -234,19 +277,24 @@ function cardSummary(c) {
   if (c.type === "attendance") parts.push(c.status ? pick(STATUS_LABEL[c.status]) : "?", c.on_date ? dayLabel(c.on_date) : "");
   if (c.type === "payment") parts.push(c.amount ? inr(c.amount) : "₹?", monthsLabel(c.for_month));
   if (c.type === "promise") parts.push(c.amount ? inr(c.amount) : "₹?", c.on_date ? byDate(c.on_date) : "");
-  if (c.type === "fee_set") parts.push(c.amount ? inr(c.amount) : "₹?", c.for_month ? `from ${monthName(c.for_month, false)}` : "");
+  if (c.type === "fee_set") parts.push(c.amount ? inr(c.amount) : "₹?", c.for_month ? monthName(c.for_month, false) : "");
   if (c.type === "note") parts.push(c.note || "");
   return parts.filter(Boolean).join(" · ");
 }
 
-function spansText(c) {
-  const s = [c.student_text, c.amount_text, c.month_text, c.date_text].filter(Boolean).map((x) => `“${x}”`);
-  return s.length ? `${L("read_as")} ${s.join(" ")}` : "";
+// The value shown on the right of a card: what code worked out from her words.
+function cardValue(c) {
+  if (c.type === "attendance") return { cls: c.status === "absent" ? "absent" : "", big: c.status ? pick(STATUS_LABEL[c.status]) : "?", small: dayLabel(c.on_date) };
+  if (c.type === "payment") return { cls: "money", big: c.amount ? inr(c.amount) : "₹?", small: monthsLabel(c.for_month) || (S.lang === "hi" ? "purana baaki pehle" : "oldest due first") };
+  if (c.type === "promise") return { cls: "money", big: c.amount ? inr(c.amount) : "₹?", small: c.on_date ? byDate(c.on_date) : (S.lang === "hi" ? "baad mein" : "later") };
+  if (c.type === "fee_set") return { cls: "money", big: c.amount ? inr(c.amount) + L("per_month") : "₹?", small: c.for_month ? `${S.lang === "hi" ? "" : "from "}${monthName(c.for_month, false)}${S.lang === "hi" ? " se" : ""}` : "" };
+  if (c.type === "note") return { cls: "", big: "", small: c.note || "" };
+  return { cls: "", big: "", small: "" };
 }
 
-function field(id, labelKey, input) {
+function field(id, labelKey, input, cls = "") {
   input.id = id;
-  return h("div", {}, h("label", { for: id, text: L(labelKey) }), input);
+  return h("div", { class: cls }, h("label", { for: id, text: L(labelKey) }), input);
 }
 
 let uid = 0;
@@ -273,13 +321,13 @@ function editor(c, onChange) {
   const date = h("input", { type: "date", value: c.on_date || "" });
   const note = h("input", { type: "text", maxlength: "500", value: c.note || "" });
 
-  const fType = field(id + "t", "type", typeSel);
   const fStu = field(id + "s", "student", stuSel);
+  const fType = field(id + "t", "type", typeSel);
   const fStatus = field(id + "st", "status", statusSel);
   const fAmt = field(id + "a", "amount", amt);
   const fMonth = field(id + "m", "for_month", month);
   const fDate = field(id + "d", "on_date", date);
-  const fNote = field(id + "n", "note", note);
+  const fNote = field(id + "n", "note", note, "span2");
   wrap.append(fStu, fType, fStatus, fAmt, fMonth, fDate, fNote);
 
   function sync() {
@@ -333,68 +381,129 @@ async function undo(ids) {
   loadToday();
 }
 
-function renderCard(c, ctx, { onSaved, onDiscard, showSave = false }) {
+function renderCard(c, ctx, { onSaved, onDiscard }, index = 0) {
   const isOk = c.verdict === "ok";
   let edited = Object.assign({}, c);
-  const body = h("div");
-  const summary = h("span", { class: "summary", text: cardSummary(c) });
-  const art = h("article", { class: `card ${isOk ? "ok" : "confirm"}`, "aria-label": `${pick(TYPE_LABEL[c.type])}: ${cardSummary(c)}` },
-    h("div", { class: "head" },
-      h("span", { class: "icon", "aria-hidden": "true", text: isOk ? "✓" : "⚠" }),
-      h("span", { class: "kind", text: pick(TYPE_LABEL[c.type] || ["?", "?"]) }),
-      summary),
-    spansText(c) ? h("div", { class: "spans", text: spansText(c) }) : null,
-    c.reasons && c.reasons.length ? h("ul", { class: "reasons" }, c.reasons.map((r) => h("li", { text: S.lang === "hi" ? r.hi : r.en }))) : null,
-    body);
 
-  const acceptBtn = h("button", { type: "button", class: "primary", text: L("accept") });
-  const discardBtn = h("button", { type: "button", class: "ghost", text: L("discard"), onclick: () => onDiscard() });
+  const nameEl = h("div", { class: "card-name" });
+  const valBig = h("strong");
+  const valSmall = h("span");
+  const valBox = h("div", { class: "card-val" }, valBig, valSmall);
+  function paint(x) {
+    nameEl.replaceChildren(x.student_name ? x.student_name : h("span", { class: "guess", text: `“${x.student_text || "?"}”` }));
+    const v = cardValue(x);
+    valBox.className = `card-val ${v.cls}`;
+    valBig.textContent = v.big;
+    valSmall.textContent = v.small;
+  }
+  paint(c);
+
+  const body = h("div");
+  const art = h("article", { class: `card ${isOk ? "ok" : "confirm"}`, "aria-label": `${pick(TYPE_LABEL[c.type])}: ${cardSummary(c)}` },
+    h("div", { class: "card-top" },
+      h("span", { class: "badge-ic", "aria-hidden": "true", text: isOk ? "✓" : "!" }),
+      h("div", { class: "card-main" },
+        h("div", { class: "card-kind", text: pick(TYPE_LABEL[c.type] || ["?", "?"]) }),
+        nameEl),
+      valBox),
+    c.reasons && c.reasons.length ? h("div", { class: "question" },
+      c.reasons.map((r) => h("span", { text: S.lang === "hi" ? r.hi : r.en }))) : null,
+    body);
+  art.style.animationDelay = Math.min(index, 6) * 40 + "ms";
+
+  const acceptBtn = h("button", { type: "button", class: "btn primary", text: L("accept") });
+  const discardBtn = h("button", { type: "button", class: "btn quiet", text: L("discard"), onclick: () => onDiscard() });
 
   function openEditor() {
     body.replaceChildren(editor(c, (patch) => {
       edited = Object.assign({}, c, patch);
-      summary.textContent = cardSummary(edited);
+      paint(edited);
       acceptBtn.disabled = !validEdit(edited);
     }));
   }
   acceptBtn.addEventListener("click", async () => {
     if (!validEdit(edited)) return;
     acceptBtn.disabled = true;
+    acceptBtn.setAttribute("aria-busy", "true");
     try {
-      const ids = await saveEvents(ctx, [edited], !isOk || edited !== c);
+      const ids = await saveEvents(ctx, [edited], true);
       toast(`1 ${L("saved_n")}`, () => undo(ids));
       onSaved();
-    } catch (e) { toast(`${L("error")}: ${e.message}`); acceptBtn.disabled = false; }
+    } catch (e) { toast(`${L("error")}: ${e.message}`); acceptBtn.disabled = false; acceptBtn.removeAttribute("aria-busy"); }
   });
 
   if (!isOk) {
     openEditor();
-    art.append(h("div", { class: "actions" }, acceptBtn, discardBtn));
+    art.append(h("div", { class: "card-actions" }, acceptBtn, discardBtn));
   } else {
-    const editBtn = h("button", { type: "button", class: "ghost", text: L("edit"), onclick: () => {
-      openEditor(); c.verdict = "confirm"; art.className = "card confirm"; editBtn.remove(); acceptBtn.hidden = false; acceptBtn.focus();
+    const editBtn = h("button", { type: "button", class: "btn text", text: L("edit"), onclick: () => {
+      openEditor(); c.verdict = "confirm"; art.className = "card confirm";
+      art.querySelector(".badge-ic").textContent = "!";
+      editBtn.remove(); actions.prepend(acceptBtn); acceptBtn.focus();
     } });
-    acceptBtn.hidden = !showSave;
-    art.append(h("div", { class: "actions" }, acceptBtn, editBtn, discardBtn));
+    const delBtn = h("button", { type: "button", class: "btn text", text: L("discard"), onclick: () => onDiscard() });
+    const actions = h("div", { class: "card-actions inline" }, editBtn, delBtn);
+    art.querySelector(".card-main").append(actions);
   }
   return art;
 }
 
+// Show her line with the words the model picked out highlighted (green = checked, amber = look).
+function highlightLine(line, cards) {
+  const lower = line.toLowerCase();
+  const marks = [];
+  for (const c of cards) {
+    for (const span of [c.student_text, c.amount_text, c.month_text, c.date_text]) {
+      if (!span) continue;
+      const s = span.toLowerCase();
+      let from = 0, at;
+      while ((at = lower.indexOf(s, from)) !== -1) {
+        const end = at + s.length;
+        if (!marks.some((m) => at < m.end && end > m.start)) { marks.push({ start: at, end, cls: c.verdict === "ok" ? "ok" : "confirm" }); break; }
+        from = end;
+      }
+    }
+  }
+  marks.sort((a, b) => a.start - b.start);
+  const out = h("p", { class: "heard-line" });
+  let pos = 0;
+  for (const m of marks) {
+    if (m.start > pos) out.append(line.slice(pos, m.start));
+    out.append(h("mark", { class: m.cls, text: line.slice(m.start, m.end) }));
+    pos = m.end;
+  }
+  out.append(line.slice(pos));
+  return out;
+}
+
 function renderParsed() {
   const box = $("#cards");
+  const heard = $("#heard");
   const p = S.parsed;
   box.replaceChildren();
   $("#cards-actions").hidden = true;
-  if (!p) return;
-  if (!p.cards.length) { box.append(h("p", { class: "muted", text: L("no_events") })); return; }
+  heard.hidden = true;
+  if (!p) { $("#parse-status").replaceChildren(); return; }
+
+  const ok = p.cards.filter((c) => c.verdict === "ok").length;
+  const amber = p.cards.length - ok;
+  $("#parse-status").replaceChildren(
+    ok ? h("span", { class: "pill ok", text: `✓ ${ok} ${L("checked_n")}` }) : null,
+    amber ? h("span", { class: "pill warn", text: `! ${amber} ${L("look_n")}` }) : null,
+    h("span", { text: `${p.seconds}s · ${MODEL_NAMES[p.model] || p.model}` }));
+
+  heard.replaceChildren(h("p", { class: "heard-label", text: L("heard") }), highlightLine(p.line, p.cards));
+  heard.hidden = false;
+
+  if (!p.cards.length) { box.append(h("p", { class: "lede", text: L("no_events") })); return; }
   p.cards.forEach((c, i) => box.append(renderCard(c, p, {
     onSaved: () => { p.cards.splice(i, 1); renderParsed(); loadToday(); },
     onDiscard: () => { p.cards.splice(i, 1); renderParsed(); },
-  })));
-  const greens = p.cards.filter((c) => c.verdict === "ok").length;
+  }, i)));
   $("#cards-actions").hidden = false;
   const btn = $("#save-green");
-  btn.textContent = `${L("save_green")} (${greens})` + (p.cards.length > greens ? ` · ⚠ ${p.cards.length - greens} → ${L("tab_check")}` : "");
+  btn.textContent = ok ? `${ok} ${L("save_n_green")}` : `${amber} → ${L("tab_check")}`;
+  $("#save-note").textContent = ok && amber ? `${amber} ${L("save_note")}` : "";
 }
 
 async function saveAllGreen() {
@@ -431,12 +540,14 @@ function saveTray() {
 function renderTray() {
   const box = $("#tray");
   box.replaceChildren();
-  if (!S.tray.length) { box.append(h("p", { text: L("tray_empty") })); return; }
-  S.tray.forEach((item) => {
+  if (!S.tray.length) { box.append(h("ul", { class: "list" }, h("li", { class: "empty", text: `✓ ${L("tray_empty")}` }))); return; }
+  S.tray.forEach((item, i) => {
     const ctx = { line: item.line, entry_date: item.entry_date, model: item.model };
     const remove = () => { S.tray = S.tray.filter((x) => x.key !== item.key); saveTray(); renderTray(); };
-    box.append(h("p", { class: "muted", text: `${dayLabel(item.entry_date)}: “${item.line}”` }));
-    box.append(renderCard(item.card, ctx, { onSaved: () => { remove(); loadToday(); }, onDiscard: remove }));
+    box.append(h("div", { class: "heard" },
+      h("p", { class: "heard-label", text: `${L("from_line")} · ${dayLabel(item.entry_date)}` }),
+      highlightLine(item.line, [item.card])));
+    box.append(renderCard(item.card, ctx, { onSaved: () => { remove(); loadToday(); }, onDiscard: remove }, i));
   });
 }
 
@@ -447,16 +558,15 @@ async function onRead(e) {
   if (!line) return;
   const btn = $("#read-btn");
   btn.disabled = true;
-  $("#parse-status").textContent = L("reading");
+  btn.setAttribute("aria-busy", "true");
+  $("#parse-status").replaceChildren(h("span", { class: "pill muted", text: L("reading") }));
   try {
     const r = await api("/api/parse", { method: "POST", json: { line, entry_date: $("#entry-date").value || null } });
-    S.parsed = { line: r.line, entry_date: r.entry_date, model: r.model, cards: r.events };
-    const ok = r.events.filter((c) => c.verdict === "ok").length;
-    $("#parse-status").textContent = `✓ ${ok} · ⚠ ${r.events.length - ok} · ${r.seconds}s`;
+    S.parsed = { line: r.line, entry_date: r.entry_date, model: r.model, seconds: r.seconds, cards: r.events };
     renderParsed();
   } catch (err) {
-    $("#parse-status").textContent = `${L("error")}: ${err.message}`;
-  } finally { btn.disabled = false; }
+    $("#parse-status").replaceChildren(h("span", { class: "pill due", text: `${L("error")}: ${err.message}` }));
+  } finally { btn.disabled = false; btn.removeAttribute("aria-busy"); }
 }
 
 async function loadToday() {
@@ -465,104 +575,147 @@ async function loadToday() {
   try {
     const rows = await api(`/api/entries?entry_date=${encodeURIComponent(d)}`);
     ul.replaceChildren();
-    if (!rows.length) { ul.append(h("li", { class: "muted", text: L("nothing_saved") })); return; }
+    if (!rows.length) { ul.append(h("li", { class: "empty", text: L("nothing_saved") })); return; }
     rows.forEach((e) => {
-      const c = Object.assign({}, e, { student_name: e.student_name });
-      ul.append(h("li", { class: "student-item" },
-        h("span", {}, h("strong", { text: pick(TYPE_LABEL[e.type]) + ": " }), cardSummary(c),
-          e.verdict === "confirmed_by_user" ? h("span", { class: "badge", text: "✔ you" }) : null),
-        h("button", { type: "button", class: "link", text: L("discard"), "aria-label": `${L("discard")} ${cardSummary(c)}`,
+      const c = Object.assign({}, e);
+      const v = cardValue(c);
+      ul.append(h("li", {},
+        h("span", { class: "type-ic", "aria-hidden": "true", text: TYPE_IC[e.type] || "•" }),
+        h("div", { class: "row-main" },
+          h("div", { class: "row-title", text: e.student_name || "?" }),
+          h("div", { class: "row-sub", text: `${pick(TYPE_LABEL[e.type])}${e.verdict === "confirmed_by_user" ? (S.lang === "hi" ? " · aapne pakka kiya" : " · confirmed by you") : ""}` })),
+        h("div", { class: "row-end" }, h("strong", { text: v.big }), h("span", { class: "row-sub", text: v.small })),
+        h("button", { type: "button", class: "btn text", text: "✕", "aria-label": `${L("discard")} ${cardSummary(c)}`,
           onclick: async () => { await api(`/api/entries/${e.id}`, { method: "DELETE" }); loadToday(); } })));
     });
-  } catch (err) { /* PIN or server down: shown elsewhere */ }
+  } catch (err) { /* PIN or server down: shown in the status line */ }
 }
 
 // ---------- Baaki ----------
+function promiseTag(p) {
+  if (!p) return null;
+  const late = p.status === "overdue";
+  return h("span", { class: `promise ${late ? "overdue" : ""}`,
+    text: `${late ? "⏰" : "🤝"} ${L("promised")} ${inr(p.amount)}${p.on_date ? " " + byDate(p.on_date) : ""}${late ? " · " + L("overdue") : ""}` });
+}
+
+function parkDetail() {
+  const box = $("#student-detail");
+  box.hidden = true;
+  $("#panel-baaki").append(box);
+  document.querySelectorAll("#dues-list .row-btn[aria-expanded]").forEach((b) => b.setAttribute("aria-expanded", "false"));
+}
+
 async function loadDues() {
   const month = $("#dues-month").value || S.today.slice(0, 7);
-  const ul = $("#dues-list");
+  const wrap = $("#dues-list");
   try {
     const d = await api(`/api/dues?month=${encodeURIComponent(month)}`);
-    const owing = d.rows.filter((r) => r.balance > 0).length;
-    const pctPaid = d.total_due ? Math.round((100 * d.total_paid) / d.total_due) : 0;
-    const stat = (cls, label, value) => h("div", { class: `stat ${cls}` }, h("span", { class: "stat-label", text: label }), h("strong", { text: value }));
+    parkDetail();
+    const owes = d.rows.filter((r) => r.balance > 0);
+    const clear = d.rows.filter((r) => r.balance <= 0);
+    const pct = d.total_due ? Math.round((100 * d.total_paid) / d.total_due) : 0;
+
+    const meter = h("div", { class: "meter", role: "img", "aria-label": `${pct}% ${L("collected")}` }, h("span"));
     $("#dues-total").replaceChildren(
-      h("p", { class: "stats-title", text: `${L("total_for")} · ${monthName(month)}` }),
-      h("div", { class: "stat-row" },
-        stat("due", L("stat_pending"), inr(d.total_balance)),
-        stat("clear", L("stat_collected"), inr(d.total_paid)),
-        stat("", L("stat_owing"), `${owing} / ${d.rows.length}`)),
-      h("div", { class: "bar", role: "img", "aria-label": `${pctPaid}% ${L("stat_collected")}` },
-        h("span", { class: "bar-fill", style: null })));
-    $("#dues-total .bar-fill").style.width = pctPaid + "%";
-    ul.replaceChildren();
-    d.rows.forEach((r) => {
-      const badge = r.promise ? h("span", { class: `badge ${r.promise.status === "overdue" ? "overdue" : ""}`,
-        text: `${r.promise.status === "overdue" ? "⏰ " : "🤝 "}${L("promised")} ${inr(r.promise.amount)}${r.promise.on_date ? " " + byDate(r.promise.on_date) : ""}${r.promise.status === "overdue" ? " (" + L("overdue") + ")" : ""}` }) : null;
-      ul.append(h("li", { class: `dues-item ${r.balance > 0 ? "owes" : "paid"}` },
-        h("span", { class: "avatar", "aria-hidden": "true", text: r.name.slice(0, 1) }),
-        h("div", { class: "grow" },
-          h("button", { type: "button", class: "name", text: r.name, onclick: () => openStudent(r.student_id, month) }),
-          h("div", { class: "muted", text: `${r.batch || ""} · ${L("due")} ${inr(r.due)} · ${L("paid")} ${inr(r.paid)}` }),
-          badge),
-        h("span", { class: `amt ${r.balance > 0 ? "due" : "clear"}`, text: r.balance > 0 ? `${inr(r.balance)} ${L("balance")}` : `✓ ${L("all_clear")}` })));
-    });
+      h("div", { class: `summary-big ${owes.length ? "" : "clear"}` },
+        h("strong", { text: owes.length ? inr(d.total_balance) : "✓" }),
+        h("span", { text: owes.length ? `${monthName(month)} ${L("pending_in")} · ${owes.length} ${L("of_students")}` : L("everyone_paid") })),
+      meter,
+      h("div", { class: "summary-foot" },
+        h("span", {}, h("b", { text: inr(d.total_paid) }), ` ${L("collected")}`),
+        h("span", { text: `${L("of_total")} ${inr(d.total_due)} · ${pct}%` })));
+    meter.firstChild.style.width = pct + "%";
+
+    const row = (r) => {
+      const btn = h("button", { type: "button", class: "row-btn", "aria-expanded": "false", "data-name": r.name },
+        h("span", { class: `avatar ${batchClass(r.batch)}`, "aria-hidden": "true", text: initials(r.name) }),
+        h("div", { class: "row-main" },
+          h("div", { class: "row-title", text: r.name }),
+          h("div", { class: "row-sub", text: `${r.batch || ""} · ${L("due")} ${inr(r.due)} · ${L("paid")} ${inr(r.paid)}` }),
+          promiseTag(r.promise)),
+        h("div", { class: "row-end" }, r.balance > 0
+          ? h("strong", { class: "due", text: inr(r.balance) })
+          : h("strong", { class: "clear", text: `✓ ${L("all_clear")}` })),
+        svgIcon(CHEVRON));
+      btn.querySelector("svg:last-child").setAttribute("class", "chev");
+      const li = h("li", { class: "has-btn" }, btn);
+      btn.addEventListener("click", () => toggleStudent(li, btn, r.student_id, month));
+      return li;
+    };
+
+    wrap.replaceChildren(
+      owes.length ? h("h3", { class: "group-title", text: `${L("owes_group")} · ${owes.length}` }) : null,
+      owes.length ? h("ul", { class: "list" }, owes.map(row)) : null,
+      clear.length ? h("h3", { class: "group-title", text: `${L("clear_group")} · ${clear.length}` }) : null,
+      clear.length ? h("ul", { class: "list" }, clear.map(row)) : null);
   } catch (err) { $("#dues-total").textContent = `${L("error")}: ${err.message}`; }
 }
 
-async function openStudent(sid, month) {
+async function toggleStudent(li, btn, sid, month) {
   const box = $("#student-detail");
+  if (btn.getAttribute("aria-expanded") === "true") { parkDetail(); return; }
+  parkDetail();
+  btn.setAttribute("aria-expanded", "true");
+  li.append(box);
+  await renderStudent(box, sid, month);
+  box.hidden = false;
+}
+
+async function renderStudent(box, sid, month) {
   const d = await api(`/api/students/${sid}/ledger`);
-  const s = d.student;
-  const rows = d.months.slice().reverse().map((m) => h("tr", {},
-    h("td", { text: monthName(m.month) }), h("td", { class: "num", text: inr(m.due) }),
-    h("td", { class: "num", text: inr(m.paid) }), h("td", { class: "num", text: m.balance > 0 ? inr(m.balance) : "✓" }),
-    h("td", { class: "num", text: m.attendance.absent })));
+  const rows = d.months.slice().reverse().slice(0, 6).map((m) => h("tr", {},
+    h("td", { text: monthName(m.month, false) }), h("td", { text: inr(m.due) }), h("td", { text: inr(m.paid) }),
+    h("td", { class: m.balance > 0 ? "owes" : "ok", text: m.balance > 0 ? inr(m.balance) : "✓" }),
+    h("td", { text: m.attendance.absent })));
   const langSel = h("select", { id: "rem-lang" }, h("option", { value: "hinglish", text: "Hinglish" }),
     h("option", { value: "hi", text: "हिंदी" }), h("option", { value: "en", text: "English" }));
-  const toneSel = h("select", { id: "rem-tone" }, h("option", { value: "gentle", text: S.lang === "hi" ? "Pyaar se (gentle)" : "Gentle" }),
-    h("option", { value: "normal", text: S.lang === "hi" ? "Seedha (normal)" : "Normal" }),
-    h("option", { value: "firm-but-polite", text: S.lang === "hi" ? "Thoda sakht (firm but polite)" : "Firm but polite" }));
-  const out = h("textarea", { id: "rem-text", class: "reminder-text", readonly: true, "aria-label": L("reminder") });
-  const status = h("p", { class: "muted", role: "status", "aria-live": "polite" });
-  const wa = h("a", { href: "#", hidden: true, target: "_blank", rel: "noopener noreferrer", text: L("wa_link") });
+  const toneSel = h("select", { id: "rem-tone" }, h("option", { value: "gentle", text: S.lang === "hi" ? "Pyaar se" : "Gentle" }),
+    h("option", { value: "normal", text: S.lang === "hi" ? "Seedha" : "Normal" }),
+    h("option", { value: "firm-but-polite", text: S.lang === "hi" ? "Thoda sakht, par izzat se" : "Firm but polite" }));
+  const bubble = h("div", { id: "rem-text", class: "bubble", "aria-label": L("reminder") });
+  const src = h("p", { class: "rem-src", role: "status", "aria-live": "polite" });
+  const wa = h("a", { class: "btn text", href: "#", hidden: true, target: "_blank", rel: "noopener noreferrer" }, L("wa_link"), " ", h("small", { text: L("wa_note") }));
   const remMonth = (d.months.find((m) => m.month === month && m.balance > 0) || d.months.slice().reverse().find((m) => m.balance > 0) || {}).month;
 
-  const previewBtn = h("button", { type: "button", class: "primary", text: L("preview"), disabled: !remMonth });
+  const previewBtn = h("button", { type: "button", class: "btn primary", text: L("preview"), disabled: !remMonth });
+  const copyBtn = h("button", { type: "button", class: "btn quiet", text: L("copy"), hidden: true });
   previewBtn.addEventListener("click", async () => {
     previewBtn.disabled = true;
-    status.textContent = L("reading");
+    previewBtn.setAttribute("aria-busy", "true");
+    src.textContent = L("reading");
     try {
       const r = await api("/api/reminders", { method: "POST", json: { student_id: sid, month: remMonth, lang: langSel.value, tone: toneSel.value } });
-      out.value = r.text;
-      status.textContent = r.source === "fallback" ? "template: built-in" : `template: ${r.source}`;
+      bubble.textContent = r.text;
+      src.textContent = L("src_" + r.source);
       wa.href = "https://wa.me/?text=" + encodeURIComponent(r.text);
       wa.hidden = false;
-    } catch (e) { status.textContent = `${L("error")}: ${e.message}`; }
+      copyBtn.hidden = false;
+    } catch (e) { src.textContent = `${L("error")}: ${e.message}`; }
     previewBtn.disabled = false;
+    previewBtn.removeAttribute("aria-busy");
   });
-  const copyBtn = h("button", { type: "button", class: "ghost", text: L("copy"), onclick: async () => {
-    if (!out.value) return;
-    try { await navigator.clipboard.writeText(out.value); } catch (e) { out.select(); document.execCommand("copy"); }
-    status.textContent = L("copied");
-  } });
+  copyBtn.addEventListener("click", async () => {
+    if (!bubble.textContent) return;
+    try { await navigator.clipboard.writeText(bubble.textContent); src.textContent = L("copied"); }
+    catch (e) { src.textContent = L("error"); }
+  });
 
   box.replaceChildren(h("div", { class: "detail" },
-    h("h2", { text: `${s.name}${s.batch ? " · " + s.batch : ""}` }),
-    h("p", {}, `${L("outstanding")}: `, h("strong", { text: inr(d.outstanding) }), d.advance ? ` · ${L("advance")}: ${inr(d.advance)}` : ""),
-    h("table", {}, h("thead", {}, h("tr", {}, h("th", { text: L("month_col") }), h("th", { class: "num", text: L("due") }),
-      h("th", { class: "num", text: L("paid") }), h("th", { class: "num", text: L("balance") }), h("th", { class: "num", text: L("absent_col") }))),
+    h("div", { class: "detail-head" },
+      h("span", { class: "row-sub", text: `${L("outstanding")}${d.advance ? " · " + L("advance") + " " + inr(d.advance) : ""}` }),
+      h("strong", { class: d.outstanding > 0 ? "" : "clear", text: d.outstanding > 0 ? inr(d.outstanding) : "✓" })),
+    h("table", { class: "ledger" },
+      h("thead", {}, h("tr", {}, h("th", { text: L("month_col") }), h("th", { text: L("due") }),
+        h("th", { text: L("paid") }), h("th", { text: L("balance") }), h("th", { text: L("absent_col") }))),
       h("tbody", {}, rows)),
-    h("h3", { text: `${L("reminder")}${remMonth ? " · " + monthName(remMonth) : ""}` }),
-    h("div", { class: "row" },
-      h("div", {}, h("label", { for: "rem-lang", text: L("lang") }), langSel),
-      h("div", {}, h("label", { for: "rem-tone", text: L("tone") }), toneSel)),
-    h("div", { class: "row" }, previewBtn, copyBtn),
-    out, status, wa,
-    h("p", {}, h("button", { type: "button", class: "link", text: L("close"), onclick: () => { box.hidden = true; } }))));
-  box.hidden = false;
-  box.querySelector("h2").tabIndex = -1;
-  box.querySelector("h2").focus();
+    remMonth ? h("div", { class: "rem" },
+      h("h3", { text: `${L("reminder")} · ${monthName(remMonth, false)}` }),
+      h("div", { class: "rem-opts" },
+        h("div", {}, h("label", { for: "rem-lang", text: L("lang") }), langSel),
+        h("div", {}, h("label", { for: "rem-tone", text: L("tone") }), toneSel)),
+      bubble, src,
+      h("div", { class: "rem-actions" }, previewBtn, copyBtn, wa)) : null));
 }
 
 // ---------- Bachche ----------
@@ -572,11 +725,14 @@ async function loadStudents() {
   if (!ul) return;
   ul.replaceChildren();
   S.students.forEach((s) => {
-    ul.append(h("li", { class: "student-item" },
-      h("span", { class: "avatar", "aria-hidden": "true", text: s.name.slice(0, 1) }),
-      h("div", { class: "grow" }, h("strong", { text: s.name }), s.aliases.length ? ` (${s.aliases.join(", ")})` : "",
-        h("div", { class: "muted", text: `${s.batch || ""} · ${inr(s.monthly_fee)}/mo · from ${monthName(s.start_month)}${s.end_month ? " · " + L("left") + " " + monthName(s.end_month) : ""}` })),
-      h("span", { class: `amt ${s.outstanding > 0 ? "due" : "clear"}`, text: s.outstanding > 0 ? inr(s.outstanding) : "✓" })));
+    ul.append(h("li", {},
+      h("span", { class: `avatar ${batchClass(s.batch)}`, "aria-hidden": "true", text: initials(s.name) }),
+      h("div", { class: "row-main" },
+        h("div", { class: "row-title" }, s.name, s.aliases.length ? h("span", { class: "row-sub", text: ` · ${s.aliases.join(", ")}` }) : null),
+        h("div", { class: "row-sub", text: `${s.batch || ""} · ${inr(s.monthly_fee)}${L("per_month")} · ${S.lang === "hi" ? monthName(s.start_month) + " " + L("since") : L("since") + " " + monthName(s.start_month)}${s.end_month ? " · " + L("left") + " " + monthName(s.end_month) : ""}` })),
+      h("div", { class: "row-end" }, s.outstanding > 0
+        ? h("strong", { class: "due", text: inr(s.outstanding) })
+        : h("strong", { class: "clear", text: "✓" }))));
   });
 }
 
@@ -613,17 +769,29 @@ async function onImport(e) {
 // ---------- Poocho ----------
 const EXAMPLES = ["kis kis ka october baaki hai?", "aman ka kitna baaki hai?", "riya kitne din nahi aayi is mahine?", "is mahine kisne fees de di?"];
 
+function renderAskHint() {
+  const t = $("#answer");
+  if (!t.children.length || t.dataset.hint === "1") {
+    t.dataset.hint = "1";
+    t.replaceChildren(h("div", { class: "a-bubble" }, h("p", { text: L("ask_hint") })));
+  }
+}
+
 async function ask(question, studentId = null) {
-  const ans = $("#answer");
-  ans.textContent = L("reading");
+  const t = $("#answer");
+  if (t.dataset.hint === "1") { t.replaceChildren(); t.dataset.hint = "0"; }
+  t.append(h("div", { class: "q-bubble", text: question }));
+  const a = h("div", { class: "a-bubble" }, h("p", { class: "row-sub", text: L("reading") }));
+  t.append(a);
   try {
     const r = await api("/api/ask", { method: "POST", json: { question, student_id: studentId } });
-    ans.replaceChildren(h("p", { text: S.lang === "hi" ? r.hi : r.en }));
+    a.replaceChildren(h("p", { text: S.lang === "hi" ? r.hi : r.en }));
     if (r.candidates && r.candidates.length) {
-      ans.append(h("div", { class: "chips", role: "group", "aria-label": L("pick_student") },
+      a.append(h("div", { class: "chips", role: "group", "aria-label": L("pick_student") },
         r.candidates.map((c) => h("button", { type: "button", text: c.name, onclick: () => ask(question, c.id) }))));
     }
-  } catch (err) { ans.textContent = `${L("error")}: ${err.message}`; }
+  } catch (err) { a.replaceChildren(h("p", { text: `${L("error")}: ${err.message}` })); }
+  a.scrollIntoView({ block: "nearest" });
 }
 
 // ---------- init ----------
@@ -631,15 +799,8 @@ function init() {
   applyLang();
   setupTabs();
   saveTray();
-  $("#lang-toggle").addEventListener("click", () => {
-    S.lang = S.lang === "hi" ? "en" : "hi";
-    localStorage.setItem("tr_lang", S.lang);
-    applyLang();
-    renderParsed();
-    const sel = document.querySelector('[role="tab"][aria-selected="true"]');
-    if (sel) showTab(sel.dataset.tab);
-    loadToday();
-  });
+  $("#lang-hi").addEventListener("click", () => setLang("hi"));
+  $("#lang-en").addEventListener("click", () => setLang("en"));
   $("#pin-form").addEventListener("submit", (e) => {
     e.preventDefault();
     S.pin = $("#pin-input").value;
@@ -656,9 +817,14 @@ function init() {
   $("#dues-month").addEventListener("change", loadDues);
   $("#student-form").addEventListener("submit", onAddStudent);
   $("#import-form").addEventListener("submit", onImport);
-  $("#ask-form").addEventListener("submit", (e) => { e.preventDefault(); const q = $("#question").value.trim(); if (q) ask(q); });
+  $("#ask-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = $("#question").value.trim();
+    if (q) { ask(q); $("#question").value = ""; }
+  });
   const ex = $("#ask-examples");
-  EXAMPLES.forEach((q) => ex.append(h("button", { type: "button", text: q, onclick: () => { $("#question").value = q; ask(q); } })));
+  EXAMPLES.forEach((q) => ex.append(h("button", { type: "button", text: q, onclick: () => ask(q) })));
+  renderAskHint();
   start();
 }
 
