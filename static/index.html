@@ -10,7 +10,10 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
-    <h1>Tuition Register</h1>
+    <div class="brand">
+      <span class="logo" aria-hidden="true">📒</span>
+      <div><h1>Tuition Register</h1><p class="tagline" data-i18n="tagline"></p></div>
+    </div>
     <div class="top-right">
       <span id="status-chip" class="chip" role="status">…</span>
       <button id="lang-toggle" type="button" class="ghost" aria-pressed="false">English</button>
@@ -78,7 +81,7 @@
           <input id="dues-month" type="month">
         </div>
       </div>
-      <p id="dues-total" class="total" aria-live="polite"></p>
+      <div id="dues-total" class="stats" aria-live="polite"></div>
       <ul id="dues-list" class="plain"></ul>
       <div id="student-detail" hidden></div>
     </section>

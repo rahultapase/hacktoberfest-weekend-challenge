@@ -3,6 +3,10 @@
 
 // ---------- strings: [hinglish, english] ----------
 const T = {
+  tagline: ["Fees aur haazri, bina hisaab lagaye", "Fees and attendance, no sums by hand"],
+  stat_pending: ["Baaki", "Pending"],
+  stat_collected: ["Mil gaye", "Collected"],
+  stat_owing: ["Bachche baaki", "Students owing"],
   tab_likho: ["Likho", "Write"],
   tab_check: ["Check karo", "Confirm"],
   tab_baaki: ["Baaki", "Dues"],
@@ -479,13 +483,25 @@ async function loadDues() {
   const ul = $("#dues-list");
   try {
     const d = await api(`/api/dues?month=${encodeURIComponent(month)}`);
-    $("#dues-total").textContent = `${L("total_for")} (${monthName(month)}): ${inr(d.total_balance)} · ${L("paid")} ${inr(d.total_paid)} / ${inr(d.total_due)}`;
+    const owing = d.rows.filter((r) => r.balance > 0).length;
+    const pctPaid = d.total_due ? Math.round((100 * d.total_paid) / d.total_due) : 0;
+    const stat = (cls, label, value) => h("div", { class: `stat ${cls}` }, h("span", { class: "stat-label", text: label }), h("strong", { text: value }));
+    $("#dues-total").replaceChildren(
+      h("p", { class: "stats-title", text: `${L("total_for")} · ${monthName(month)}` }),
+      h("div", { class: "stat-row" },
+        stat("due", L("stat_pending"), inr(d.total_balance)),
+        stat("clear", L("stat_collected"), inr(d.total_paid)),
+        stat("", L("stat_owing"), `${owing} / ${d.rows.length}`)),
+      h("div", { class: "bar", role: "img", "aria-label": `${pctPaid}% ${L("stat_collected")}` },
+        h("span", { class: "bar-fill", style: null })));
+    $("#dues-total .bar-fill").style.width = pctPaid + "%";
     ul.replaceChildren();
     d.rows.forEach((r) => {
       const badge = r.promise ? h("span", { class: `badge ${r.promise.status === "overdue" ? "overdue" : ""}`,
         text: `${r.promise.status === "overdue" ? "⏰ " : "🤝 "}${L("promised")} ${inr(r.promise.amount)}${r.promise.on_date ? " " + byDate(r.promise.on_date) : ""}${r.promise.status === "overdue" ? " (" + L("overdue") + ")" : ""}` }) : null;
-      ul.append(h("li", { class: "dues-item" },
-        h("div", {},
+      ul.append(h("li", { class: `dues-item ${r.balance > 0 ? "owes" : "paid"}` },
+        h("span", { class: "avatar", "aria-hidden": "true", text: r.name.slice(0, 1) }),
+        h("div", { class: "grow" },
           h("button", { type: "button", class: "name", text: r.name, onclick: () => openStudent(r.student_id, month) }),
           h("div", { class: "muted", text: `${r.batch || ""} · ${L("due")} ${inr(r.due)} · ${L("paid")} ${inr(r.paid)}` }),
           badge),
@@ -557,7 +573,8 @@ async function loadStudents() {
   ul.replaceChildren();
   S.students.forEach((s) => {
     ul.append(h("li", { class: "student-item" },
-      h("div", {}, h("strong", { text: s.name }), s.aliases.length ? ` (${s.aliases.join(", ")})` : "",
+      h("span", { class: "avatar", "aria-hidden": "true", text: s.name.slice(0, 1) }),
+      h("div", { class: "grow" }, h("strong", { text: s.name }), s.aliases.length ? ` (${s.aliases.join(", ")})` : "",
         h("div", { class: "muted", text: `${s.batch || ""} · ${inr(s.monthly_fee)}/mo · from ${monthName(s.start_month)}${s.end_month ? " · " + L("left") + " " + monthName(s.end_month) : ""}` })),
       h("span", { class: `amt ${s.outstanding > 0 ? "due" : "clear"}`, text: s.outstanding > 0 ? inr(s.outstanding) : "✓" })));
   });
