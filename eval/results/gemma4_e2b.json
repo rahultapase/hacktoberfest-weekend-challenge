@@ -1,0 +1,3650 @@
+{
+ "summary": {
+  "lines": 60,
+  "gold_facts": 79,
+  "pred_facts": 79,
+  "precision": 0.9367088607594937,
+  "recall": 0.9367088607594937,
+  "line_exact": 0.8833333333333333,
+  "silent_no_verifier": 7,
+  "silent_with_verifier": 2,
+  "correct_saved_green": 70,
+  "gold_clean_facts": 76,
+  "amber": 7,
+  "missing_cards": 0,
+  "confirm_rate": 0.08860759493670886,
+  "expect_confirm_lines": 3,
+  "expect_confirm_caught": 3,
+  "clean_lines_with_confirm": 4,
+  "clean_lines": 57,
+  "auto_complete_lines": 51,
+  "drops": 5,
+  "drops_caught_v7": 0,
+  "model": "gemma4:e2b",
+  "latency_p50": 3.325885400000004,
+  "latency_p95": 4.487147205000014,
+  "latency_mean": 3.506256088333354,
+  "cold_first_call_s": 17.108043199999997,
+  "peak_ram_bytes": 335142912,
+  "ollama_ps": {
+   "size": 213322301,
+   "size_vram": 213322301
+  },
+  "errors": 0
+ },
+ "lines": [
+  {
+   "id": 1,
+   "category": "single_attendance",
+   "line": "karan late aaya",
+   "seconds": 3.263682499999959,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "karan",
+     "status": "late",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "karan",
+     "student_name": "Karan",
+     "status": "late",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-21",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 2,
+   "category": "single_attendance",
+   "line": "riyu nahi aayi aaj",
+   "seconds": 3.2571066999998948,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "riyu",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": "aaj",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "riyu",
+     "student_name": "Riya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-22",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 3,
+   "category": "single_attendance",
+   "line": "ishaan absent tha",
+   "seconds": 3.1460965999999644,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "ishaan",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "ishaan",
+     "student_name": "Ishaan",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-23",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 4,
+   "category": "single_attendance",
+   "line": "kavya aaj chhutti pe thi",
+   "seconds": 3.3435409999999592,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "kavya",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "kavya",
+     "student_name": "Kavya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-24",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 5,
+   "category": "single_attendance",
+   "line": "vicky kal nahi aaya tha",
+   "seconds": 3.2332243000000744,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "vicky",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": "kal",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "vicky",
+     "student_name": "Vikram",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-24",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 6,
+   "category": "single_attendance",
+   "line": "sneha present",
+   "seconds": 3.1512722999999596,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "sneha",
+     "status": "present",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "sneha",
+     "student_name": "Sneha",
+     "status": "present",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-26",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 7,
+   "category": "multi_attendance",
+   "line": "priya aur neha 6th absent, baaki sab aaye",
+   "seconds": 3.9684240000000273,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "priya",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "neha 6th",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "priya",
+     "student_name": "Priya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-28",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "neha 6th",
+     "student_name": "Neha Sharma",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-28",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 8,
+   "category": "multi_attendance",
+   "line": "rohit rohan dono late aaye",
+   "seconds": 3.9526705999999194,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "rohit",
+     "status": "late",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "rohan",
+     "status": "late",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "rohit",
+     "student_name": "Rohit",
+     "status": "late",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-28",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "rohan",
+     "student_name": "Rohan",
+     "status": "late",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-28",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 9,
+   "category": "multi_attendance",
+   "line": "mohit, arjun aur shreya nahi aaye",
+   "seconds": 4.420137700000055,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "mohit",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "arjun",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "shreya",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "mohit",
+     "student_name": "Mohit",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-29",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "arjun",
+     "student_name": "Arjun",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-29",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "shreya",
+     "student_name": "Shreya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-29",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 3,
+    "n_gold_clean": 3,
+    "n_pred": 3,
+    "raw_matched": 3,
+    "raw_correct": 3,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 3,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 3,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 10,
+   "category": "multi_attendance",
+   "line": "anu aur pinky aayi, amu nahi aaya",
+   "seconds": 4.394388700000036,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "anu",
+     "status": "present",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "pinky",
+     "status": "present",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "amu",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "anu",
+     "student_name": "Ananya",
+     "status": "present",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-30",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "pinky",
+     "student_name": "Priyanka",
+     "status": "present",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-30",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "amu",
+     "student_name": "Aman",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-30",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 3,
+    "n_gold_clean": 3,
+    "n_pred": 3,
+    "raw_matched": 3,
+    "raw_correct": 3,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 3,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 3,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 11,
+   "category": "simple_payment",
+   "line": "aman ne 1200 diye oct ke",
+   "seconds": 3.3243532999999843,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "aman",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": "oct",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "aman",
+     "student_name": "Aman",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 12,
+   "category": "simple_payment",
+   "line": "riya ne 800 diye",
+   "seconds": 3.214972200000034,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "riya",
+     "status": null,
+     "amount_text": "800",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "riya",
+     "student_name": "Riya",
+     "status": null,
+     "amount": 800,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 13,
+   "category": "simple_payment",
+   "line": "sneha ki fees mil gayi 1500",
+   "seconds": 3.327417500000024,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "sneha",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "sneha",
+     "student_name": "Sneha",
+     "status": null,
+     "amount": 1500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 14,
+   "category": "simple_payment",
+   "line": "arjun ne sep ki fees 1500 de di",
+   "seconds": 3.3378573999999617,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "arjun",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": "sep",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "arjun",
+     "student_name": "Arjun",
+     "status": null,
+     "amount": 1500,
+     "for_month": "2026-09",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 15,
+   "category": "simple_payment",
+   "line": "rohan ne 1200 jama kiye is mahine ke",
+   "seconds": 3.4599441000000297,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "rohan",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": null,
+     "date_text": null,
+     "note_text": "is mahine ke"
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "rohan",
+     "student_name": "Rohan",
+     "status": null,
+     "amount": 1200,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 1,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 1,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [
+     {
+      "student": "Rohan",
+      "type": "payment",
+      "amount": 1200,
+      "for_month": null
+     }
+    ],
+    "silent_ver_facts": [
+     {
+      "student": "Rohan",
+      "type": "payment",
+      "amount": 1200,
+      "for_month": null
+     }
+    ],
+    "dropped_facts": [
+     {
+      "student": "Rohan",
+      "type": "payment",
+      "amount": 1200,
+      "for_month": "2026-10"
+     }
+    ]
+   }
+  },
+  {
+   "id": 16,
+   "category": "simple_payment",
+   "line": "kavya 1500 oct",
+   "seconds": 3.299770800000033,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "kavya",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": "oct",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "kavya",
+     "student_name": "Kavya",
+     "status": null,
+     "amount": 1500,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 17,
+   "category": "amount_words",
+   "line": "mohit ne dedh hazaar diye",
+   "seconds": 3.335123000000067,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "mohit",
+     "status": null,
+     "amount_text": "dedh hazaar",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "mohit",
+     "student_name": "Mohit",
+     "status": null,
+     "amount": 1500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 18,
+   "category": "amount_words",
+   "line": "pinky ki mummy ne 1.2k bheje",
+   "seconds": 3.2323992999999973,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "pinky",
+     "status": null,
+     "amount_text": "1.2k",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "pinky",
+     "student_name": "Priyanka",
+     "status": null,
+     "amount": 1200,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 19,
+   "category": "amount_words",
+   "line": "ishu ne aath sau diye sep ke",
+   "seconds": 3.3757439000000886,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "ishu",
+     "status": null,
+     "amount_text": "800",
+     "month_text": "sep",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "ishu",
+     "student_name": "Ishaan",
+     "status": null,
+     "amount": 800,
+     "for_month": "2026-09",
+     "on_date": null,
+     "verdict": "confirm",
+     "reasons": [
+      "V1"
+     ]
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 0,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 20,
+   "category": "amount_words",
+   "line": "shreya ne 1,500 diye",
+   "seconds": 3.3645496999999978,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "shreya",
+     "status": null,
+     "amount_text": "1,500",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "shreya",
+     "student_name": "Shreya",
+     "status": null,
+     "amount": 1500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 21,
+   "category": "partial_promise",
+   "line": "rohan ne 500 diye, baaki 700 agle hafte",
+   "seconds": 3.892845599999987,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "rohan",
+     "status": null,
+     "amount_text": "500",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "rohan",
+     "status": null,
+     "amount_text": "700",
+     "month_text": null,
+     "date_text": "agle hafte",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "rohan",
+     "student_name": "Rohan",
+     "status": null,
+     "amount": 500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "rohan",
+     "student_name": "Rohan",
+     "status": null,
+     "amount": 700,
+     "for_month": null,
+     "on_date": "2026-10-07",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 22,
+   "category": "partial_promise",
+   "line": "anu ne 600 diye oct ke, 400 baad mein degi",
+   "seconds": 4.171033100000045,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "anu",
+     "status": null,
+     "amount_text": "600",
+     "month_text": "oct",
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "anu",
+     "status": null,
+     "amount_text": "400",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "anu",
+     "student_name": "Ananya",
+     "status": null,
+     "amount": 600,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "anu",
+     "student_name": "Ananya",
+     "status": null,
+     "amount": 400,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 23,
+   "category": "partial_promise",
+   "line": "vikram ne 1000 diye baaki 500 kal",
+   "seconds": 4.031670800000029,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "vikram",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "vikram",
+     "status": null,
+     "amount_text": "500",
+     "month_text": null,
+     "date_text": "kal",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "vikram",
+     "student_name": "Vikram",
+     "status": null,
+     "amount": 1000,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "vikram",
+     "student_name": "Vikram",
+     "status": null,
+     "amount": 500,
+     "for_month": null,
+     "on_date": "2026-10-03",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 24,
+   "category": "partial_promise",
+   "line": "priya ne 400 diye, bacha hua 400 next week",
+   "seconds": 3.937679800000069,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "priya",
+     "status": null,
+     "amount_text": "400",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "priya",
+     "status": null,
+     "amount_text": "400",
+     "month_text": null,
+     "date_text": "next week",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "priya",
+     "student_name": "Priya",
+     "status": null,
+     "amount": 400,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "priya",
+     "student_name": "Priya",
+     "status": null,
+     "amount": 400,
+     "for_month": null,
+     "on_date": "2026-10-10",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 25,
+   "category": "partial_promise",
+   "line": "monu 1000 de gaya, 500 baaki hai 10 tarikh tak dega",
+   "seconds": 4.16723479999996,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "monu",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "monu",
+     "status": null,
+     "amount_text": "500",
+     "month_text": null,
+     "date_text": "10 tarikh tak",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "monu",
+     "student_name": "Mohit",
+     "status": null,
+     "amount": 1000,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "monu",
+     "student_name": "Mohit",
+     "status": null,
+     "amount": 500,
+     "for_month": null,
+     "on_date": "2026-10-10",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 26,
+   "category": "two_months",
+   "line": "shreya ne 3000 diye aug sep dono ke",
+   "seconds": 3.3435263000000077,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "shreya",
+     "status": null,
+     "amount_text": "3000",
+     "month_text": "aug sep",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "shreya",
+     "student_name": "Shreya",
+     "status": null,
+     "amount": 3000,
+     "for_month": "2026-08,2026-09",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 27,
+   "category": "two_months",
+   "line": "riya ki mummy ne 1600 diye sep oct ka",
+   "seconds": 3.4404833999999482,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "riya",
+     "status": null,
+     "amount_text": "1600",
+     "month_text": "sep oct",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "riya",
+     "student_name": "Riya",
+     "status": null,
+     "amount": 1600,
+     "for_month": "2026-09,2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 28,
+   "category": "two_months",
+   "line": "rohit ne 2400 diye sep aur oct ke",
+   "seconds": 3.347755300000017,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "rohit",
+     "status": null,
+     "amount_text": "2400",
+     "month_text": "sep oct",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "rohit",
+     "student_name": "Rohit",
+     "status": null,
+     "amount": 2400,
+     "for_month": "2026-09,2026-10",
+     "on_date": null,
+     "verdict": "confirm",
+     "reasons": [
+      "V1"
+     ]
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 0,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 29,
+   "category": "fee_change",
+   "line": "kanu ki fees ab 1000 from nov",
+   "seconds": 3.286744100000078,
+   "error": null,
+   "events": [
+    {
+     "type": "fee_set",
+     "student_text": "kanu",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": "nov",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "fee_set",
+     "student_text": "kanu",
+     "student_name": "Karan",
+     "status": null,
+     "amount": 1000,
+     "for_month": "2026-11",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 30,
+   "category": "fee_change",
+   "line": "ananya ki fees ab 1200 hogi",
+   "seconds": 3.2420662000000675,
+   "error": null,
+   "events": [
+    {
+     "type": "fee_set",
+     "student_text": "ananya",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "fee_set",
+     "student_text": "ananya",
+     "student_name": "Ananya",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 31,
+   "category": "whatsapp",
+   "line": "Ma'am Aman ki October fees 1200 bhej di hai GPay pe 🙏",
+   "seconds": 3.4442448000000923,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Aman",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": "October",
+     "date_text": null,
+     "note_text": "GPay pe"
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Aman",
+     "student_name": "Aman",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 32,
+   "category": "whatsapp",
+   "line": "Good evening ma'am, Kavya ki fees 1500 transfer kar di hai. Please check 🙏",
+   "seconds": 3.3408988999999565,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Kavya",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Kavya",
+     "student_name": "Kavya",
+     "status": null,
+     "amount": 1500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 33,
+   "category": "whatsapp",
+   "line": "Mam Sneha aaj nahi aa payegi, tabiyat thik nahi hai",
+   "seconds": 3.312275399999976,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "Sneha",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "Sneha",
+     "student_name": "Sneha",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-03",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 34,
+   "category": "whatsapp",
+   "line": "Ma'am Rohit ki sep ki fees 1200 PhonePe kar di 🙏",
+   "seconds": 3.262637899999959,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Rohit",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": "sep",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Rohit",
+     "student_name": "Rohit",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-09",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 35,
+   "category": "whatsapp",
+   "line": "Namaste ma'am, Vicky ki 750 abhi bheje hain, 750 Monday ko bhej dungi",
+   "seconds": 4.077020800000014,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Vicky",
+     "status": null,
+     "amount_text": "750",
+     "month_text": null,
+     "date_text": "Monday",
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "Vicky",
+     "status": null,
+     "amount_text": "750",
+     "month_text": null,
+     "date_text": "Monday",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Vicky",
+     "student_name": "Vikram",
+     "status": null,
+     "amount": 750,
+     "for_month": null,
+     "on_date": "2026-09-28",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "Vicky",
+     "student_name": "Vikram",
+     "status": null,
+     "amount": 750,
+     "for_month": null,
+     "on_date": "2026-10-12",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 36,
+   "category": "whatsapp",
+   "line": "Ma'am Priyanka ki fees 1200 de di thi Pinky ke haath",
+   "seconds": 3.3897624999999607,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Priyanka",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": null,
+     "date_text": null,
+     "note_text": "Pinky ke haath"
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Priyanka",
+     "student_name": "Priyanka",
+     "status": null,
+     "amount": 1200,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 37,
+   "category": "english",
+   "line": "Rohit paid 1000 for September",
+   "seconds": 3.253721100000007,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Rohit",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": "September",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Rohit",
+     "student_name": "Rohit",
+     "status": null,
+     "amount": 1000,
+     "for_month": "2026-09",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 38,
+   "category": "english",
+   "line": "Arjun absent today",
+   "seconds": 3.3213472999999567,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "Arjun",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "Arjun",
+     "student_name": "Arjun",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-29",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 39,
+   "category": "english",
+   "line": "Received 1500 from Mohit for October",
+   "seconds": 3.2957059999999956,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "Mohit",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": "October",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "Mohit",
+     "student_name": "Mohit",
+     "status": null,
+     "amount": 1500,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 40,
+   "category": "english",
+   "line": "Neha 8th was late, Kavya absent",
+   "seconds": 3.8434281000000965,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "Neha 8th",
+     "status": "late",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": "kal",
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "Kavya",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "Neha 8th",
+     "student_name": "Neha Gupta",
+     "status": "late",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-04",
+     "verdict": "confirm",
+     "reasons": [
+      "V1"
+     ]
+    },
+    {
+     "type": "attendance",
+     "student_text": "Kavya",
+     "student_name": "Kavya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-05",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 1,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": false,
+    "drops": 1,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [
+     {
+      "student": "Neha Gupta",
+      "type": "attendance",
+      "status": "late",
+      "on_date": "2026-10-04"
+     }
+    ],
+    "silent_ver_facts": [],
+    "dropped_facts": [
+     {
+      "student": "Neha Gupta",
+      "type": "attendance",
+      "status": "late",
+      "on_date": "2026-10-05"
+     }
+    ]
+   }
+  },
+  {
+   "id": 41,
+   "category": "mixed",
+   "line": "riya nahi aayi, aman ne 1500 diye oct ke, baaki 500 next week",
+   "seconds": 4.7220252999999275,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "riya",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "aman",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": "oct",
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "promise",
+     "student_text": "aman",
+     "status": null,
+     "amount_text": "500",
+     "month_text": null,
+     "date_text": "next week",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "riya",
+     "student_name": "Riya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-03",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "payment",
+     "student_text": "aman",
+     "student_name": "Aman",
+     "status": null,
+     "amount": 1500,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "promise",
+     "student_text": "aman",
+     "student_name": "Aman",
+     "status": null,
+     "amount": 500,
+     "for_month": null,
+     "on_date": "2026-10-10",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 3,
+    "n_gold_clean": 3,
+    "n_pred": 3,
+    "raw_matched": 3,
+    "raw_correct": 3,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 3,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 3,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 42,
+   "category": "mixed",
+   "line": "karan aaya, priya nahi aayi, priya ki mummy ne 800 diye",
+   "seconds": 4.492461599999956,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "karan",
+     "status": "present",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "priya",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "priya",
+     "status": null,
+     "amount_text": "800",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "karan",
+     "student_name": "Karan",
+     "status": "present",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-23",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "priya",
+     "student_name": "Priya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-23",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "payment",
+     "student_text": "priya",
+     "student_name": "Priya",
+     "status": null,
+     "amount": 800,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 3,
+    "n_gold_clean": 3,
+    "n_pred": 3,
+    "raw_matched": 3,
+    "raw_correct": 3,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 3,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 3,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 43,
+   "category": "mixed",
+   "line": "arjun late, shrey ne 1500 diye sep ke",
+   "seconds": 3.926904700000023,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "arjun",
+     "status": "late",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": "kal",
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "shrey",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": "sep",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "arjun",
+     "student_name": "Arjun",
+     "status": "late",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-25",
+     "verdict": "confirm",
+     "reasons": [
+      "V1"
+     ]
+    },
+    {
+     "type": "payment",
+     "student_text": "shrey",
+     "student_name": "Shreya",
+     "status": null,
+     "amount": 1500,
+     "for_month": "2026-09",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 1,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": false,
+    "drops": 1,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [
+     {
+      "student": "Arjun",
+      "type": "attendance",
+      "status": "late",
+      "on_date": "2026-09-25"
+     }
+    ],
+    "silent_ver_facts": [],
+    "dropped_facts": [
+     {
+      "student": "Arjun",
+      "type": "attendance",
+      "status": "late",
+      "on_date": "2026-09-26"
+     }
+    ]
+   }
+  },
+  {
+   "id": 44,
+   "category": "mixed",
+   "line": "sneha absent, kavya ne 1500 diye, mohit ne 1000",
+   "seconds": 4.486867500000017,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "sneha",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "kavya",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "mohit",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "sneha",
+     "student_name": "Sneha",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-01",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "payment",
+     "student_text": "kavya",
+     "student_name": "Kavya",
+     "status": null,
+     "amount": 1500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "payment",
+     "student_text": "mohit",
+     "student_name": "Mohit",
+     "status": null,
+     "amount": 1000,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 3,
+    "n_gold_clean": 3,
+    "n_pred": 3,
+    "raw_matched": 3,
+    "raw_correct": 3,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 3,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 3,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 45,
+   "category": "mixed",
+   "line": "pinky aur anu nahi aayi, rohan ne oct ke 1200 de diye",
+   "seconds": 4.5384004000000004,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "pinky",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "attendance",
+     "student_text": "anu",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "rohan",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": "oct",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "pinky",
+     "student_name": "Priyanka",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-04",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "attendance",
+     "student_text": "anu",
+     "student_name": "Ananya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-04",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "payment",
+     "student_text": "rohan",
+     "student_name": "Rohan",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 3,
+    "n_gold_clean": 3,
+    "n_pred": 3,
+    "raw_matched": 3,
+    "raw_correct": 3,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 3,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 3,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 46,
+   "category": "mixed",
+   "line": "ishu late aaya, uski mummy ne 800 diye is mahine ke",
+   "seconds": 4.127895699999954,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "ishu",
+     "status": "late",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    },
+    {
+     "type": "payment",
+     "student_text": "ishu",
+     "status": null,
+     "amount_text": "800",
+     "month_text": "is mahine ke",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "ishu",
+     "student_name": "Ishaan",
+     "status": "late",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-05",
+     "verdict": "ok",
+     "reasons": []
+    },
+    {
+     "type": "payment",
+     "student_text": "ishu",
+     "student_name": "Ishaan",
+     "status": null,
+     "amount": 800,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 2,
+    "n_gold_clean": 2,
+    "n_pred": 2,
+    "raw_matched": 2,
+    "raw_correct": 2,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 2,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 2,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 47,
+   "category": "typos",
+   "line": "amaan ne 1200 dye oct ke",
+   "seconds": 3.316905399999996,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "amaan",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": "oct",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "amaan",
+     "student_name": "Aman",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-10",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 48,
+   "category": "typos",
+   "line": "shreyaa nhi aayi",
+   "seconds": 3.2049328000000514,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "shreyaa",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "shreyaa",
+     "student_name": "Shreya",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-25",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 49,
+   "category": "typos",
+   "line": "rohitt ne 1200 diye sept ka",
+   "seconds": 3.2737558000001172,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "rohitt",
+     "status": null,
+     "amount_text": "1200",
+     "month_text": "sept",
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "rohitt",
+     "student_name": "Rohit",
+     "status": null,
+     "amount": 1200,
+     "for_month": "2026-09",
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 50,
+   "category": "typos",
+   "line": "kavya n 1500 diy",
+   "seconds": 3.303810999999996,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "kavya",
+     "status": null,
+     "amount_text": "1500",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "kavya",
+     "student_name": "Kavya",
+     "status": null,
+     "amount": 1500,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 51,
+   "category": "tricky",
+   "line": "kal riya ki mummy 1000 degi",
+   "seconds": 3.2306034000000636,
+   "error": null,
+   "events": [
+    {
+     "type": "promise",
+     "student_text": "riya",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": null,
+     "date_text": "kal",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "promise",
+     "student_text": "riya",
+     "student_name": "Riya",
+     "status": null,
+     "amount": 1000,
+     "for_month": null,
+     "on_date": "2026-10-05",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 52,
+   "category": "tricky",
+   "line": "neha absent",
+   "seconds": 3.1510840000000826,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "neha",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "neha",
+     "student_name": null,
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-10-02",
+     "verdict": "confirm",
+     "reasons": [
+      "V4"
+     ]
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 0,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 0,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 0,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [
+     {
+      "student": "Neha Sharma",
+      "type": "attendance",
+      "status": "absent",
+      "on_date": "2026-10-02"
+     }
+    ],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 53,
+   "category": "tricky",
+   "line": "priya ne 1000 diye",
+   "seconds": 3.3157571000001553,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "priya",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "priya",
+     "student_name": "Priya",
+     "status": null,
+     "amount": 1000,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 1,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 1,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 54,
+   "category": "tricky",
+   "line": "rahul ne 1000 diye",
+   "seconds": 3.2805241000000933,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "rahul",
+     "status": null,
+     "amount_text": "1000",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "rahul",
+     "student_name": null,
+     "status": null,
+     "amount": 1000,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "confirm",
+     "reasons": [
+      "V4"
+     ]
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 0,
+    "n_pred": 1,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 0,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 1,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [
+     {
+      "student": "Aman",
+      "type": "payment",
+      "amount": 1000,
+      "for_month": null
+     }
+    ],
+    "silent_ver_facts": [],
+    "dropped_facts": [
+     {
+      "student": "?",
+      "student_any": [],
+      "must_confirm": true,
+      "type": "payment",
+      "amount": 1000,
+      "for_month": null
+     }
+    ]
+   }
+  },
+  {
+   "id": 55,
+   "category": "tricky",
+   "line": "Ma'am Ishaan kal nahi aayega, shaadi mein ja rahe hain",
+   "seconds": 3.192191800000046,
+   "error": null,
+   "events": [
+    {
+     "type": "attendance",
+     "student_text": "Ishaan",
+     "status": "absent",
+     "amount_text": null,
+     "month_text": null,
+     "date_text": "kal",
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "attendance",
+     "student_text": "Ishaan",
+     "student_name": "Ishaan",
+     "status": "absent",
+     "amount": null,
+     "for_month": null,
+     "on_date": "2026-09-29",
+     "verdict": "ok",
+     "reasons": []
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 1,
+    "n_pred": 1,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 1,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 1,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 1,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [
+     {
+      "student": "Ishaan",
+      "type": "attendance",
+      "status": "absent",
+      "on_date": "2026-09-29"
+     }
+    ],
+    "silent_ver_facts": [
+     {
+      "student": "Ishaan",
+      "type": "attendance",
+      "status": "absent",
+      "on_date": "2026-09-29"
+     }
+    ],
+    "dropped_facts": [
+     {
+      "student": "Ishaan",
+      "type": "attendance",
+      "status": "absent",
+      "on_date": "2026-10-01"
+     }
+    ]
+   }
+  },
+  {
+   "id": 56,
+   "category": "tricky",
+   "line": "aman ne 15000 diye",
+   "seconds": 3.1959037999999964,
+   "error": null,
+   "events": [
+    {
+     "type": "payment",
+     "student_text": "aman",
+     "status": null,
+     "amount_text": "15000",
+     "month_text": null,
+     "date_text": null,
+     "note_text": null
+    }
+   ],
+   "cards": [
+    {
+     "type": "payment",
+     "student_text": "aman",
+     "student_name": "Aman",
+     "status": null,
+     "amount": 15000,
+     "for_month": null,
+     "on_date": null,
+     "verdict": "confirm",
+     "reasons": [
+      "V3"
+     ]
+    }
+   ],
+   "score": {
+    "n_gold": 1,
+    "n_gold_clean": 0,
+    "n_pred": 1,
+    "raw_matched": 1,
+    "raw_correct": 0,
+    "raw_silent": 1,
+    "raw_exact": false,
+    "green": 0,
+    "amber": 1,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": false,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": true,
+    "silent_raw_facts": [
+     {
+      "student": "Aman",
+      "type": "payment",
+      "amount": 15000,
+      "for_month": null
+     }
+    ],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 57,
+   "category": "no_event",
+   "line": "kal test hai sabka",
+   "seconds": 2.6389853000000585,
+   "error": null,
+   "events": [],
+   "cards": [],
+   "score": {
+    "n_gold": 0,
+    "n_gold_clean": 0,
+    "n_pred": 0,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 0,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 58,
+   "category": "no_event",
+   "line": "aaj bijli nahi thi, class jaldi khatam",
+   "seconds": 2.6440595000001395,
+   "error": null,
+   "events": [],
+   "cards": [],
+   "score": {
+    "n_gold": 0,
+    "n_gold_clean": 0,
+    "n_pred": 0,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 0,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 59,
+   "category": "no_event",
+   "line": "diwali ki chhutti 20 se 25 tak",
+   "seconds": 2.785650700000133,
+   "error": null,
+   "events": [],
+   "cards": [],
+   "score": {
+    "n_gold": 0,
+    "n_gold_clean": 0,
+    "n_pred": 0,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 0,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  },
+  {
+   "id": 60,
+   "category": "no_event",
+   "line": "sabko homework diya chapter 5 ka",
+   "seconds": 2.7418876000001546,
+   "error": null,
+   "events": [],
+   "cards": [],
+   "score": {
+    "n_gold": 0,
+    "n_gold_clean": 0,
+    "n_pred": 0,
+    "raw_matched": 0,
+    "raw_correct": 0,
+    "raw_silent": 0,
+    "raw_exact": true,
+    "green": 0,
+    "amber": 0,
+    "missing_cards": 0,
+    "ver_silent": 0,
+    "ver_correct_saved": 0,
+    "auto_complete": true,
+    "drops": 0,
+    "drops_caught": 0,
+    "any_confirm": false,
+    "silent_raw_facts": [],
+    "silent_ver_facts": [],
+    "dropped_facts": []
+   }
+  }
+ ],
+ "meta": {
+  "started": "2026-10-05T10:42:05",
+  "online": false,
+  "n_lines": 60,
+  "ollama_version": "0.35.1",
+  "machine": "Windows 11, 12 CPU threads, 15 GB RAM, RTX 2050 4 GB"
+ }
+}
