@@ -2,7 +2,7 @@
 
 A tuition fee and attendance register my mom can write to like a notebook. She types a line the way she'd write it in her paper register (`riya nahi aayi, aman ne 1500 diye oct ke, baaki 500 next week`). A **local Gemma model (Ollama)** copies out the names, amounts and months as exact spans. **Code** turns them into numbers and dates, checks everything (rules V1 to V8), and does all the money maths. Anything it can't confirm goes to a **Confirm tray** instead of being saved. Runs fully offline.
 
-Built Oct 5, 2026 for the [DEV Hacktoberfest Weekend Challenge: Build for a Friend](https://dev.to/challenges/hacktoberfest-weekend-2026-10-01).
+Built Oct 5, 2026. Powered by **Gemma 4 (E2B)**, an open-weight model, running locally.
 
 > **All data in this repo is synthetic.** The 18-student roster and the 60 test lines were written by me in the style of a home-tuition register. No real children's names or payments. Mom hasn't used it yet.
 
@@ -67,6 +67,8 @@ Gemma models by Google DeepMind, served by Ollama. FastAPI, Uvicorn, RapidFuzz, 
 
 ## Timeline note
 
-Repo created Oct 5, 2026. Any commit after 12:29 PM IST that day is a post-deadline fix and is listed here: none so far.
+Repo created and first version finished on Oct 5, 2026 (by 12:29 PM IST). Changes after that:
+
+- Oct 9, 2026: README wording only. No code, test or data changes.
 
 MIT License.
