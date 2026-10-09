@@ -35,8 +35,8 @@ ollama pull gemma4:e2b        # 4.6 GB, default
 ollama pull gemma3:1b         # optional, 815 MB
 
 # 2. App
-git clone https://github.com/rahultapase/hacktoberfest-weekend-challenge.git
-cd hacktoberfest-weekend-challenge
+git clone https://github.com/rahultapase/hacktoberfest-gemma-challenge.git
+cd hacktoberfest-gemma-challenge
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m app.main            # http://127.0.0.1:8000
